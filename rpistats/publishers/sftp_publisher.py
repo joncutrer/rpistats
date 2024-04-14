@@ -1,3 +1,4 @@
+from . import Publisher
 import paramiko
 import json
 import tempfile
@@ -9,7 +10,7 @@ class SftpPublisher:
         transport.connect(username=username, password=password)
         self.sftp = paramiko.SFTPClient.from_transport(transport)
 
-    def publish(self, data):
+    async def publish(self, data):
         with tempfile.NamedTemporaryFile(delete=False, mode='w') as tmpfile:
             json.dump(data, tmpfile)
             tmpfile_path = tmpfile.name

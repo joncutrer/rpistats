@@ -1,6 +1,4 @@
-
 from abc import ABC, abstractmethod
-
 
 # Define the Collector interface
 class Collector(ABC):

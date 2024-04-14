@@ -1,3 +1,4 @@
+from . import Publisher
 import paho.mqtt.client as mqtt
 import json
 
@@ -9,7 +10,7 @@ class MqttPublisher:
         self.client.connect(broker, port, 60)
         self.client.loop_start()
 
-    def publish(self, data):
+    async def publish(self, data):
         msg = json.dumps(data)
         result = self.client.publish(self.topic, msg)
         print(f"Publishing {msg} to topic {self.topic}")

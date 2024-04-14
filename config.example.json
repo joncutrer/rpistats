@@ -1,20 +1,41 @@
 {
     "hostname": "overide_hostname",
+    "update_interval": 10,
     "extended": {
         "foo": "bar"
     },
     "collectors": [
         {
+            "type": "platform",
+            "class_name": "PlatformCollector",
+            "params": {
+                "enabled": true,
+                "mute": {}
+            }
+        },
+        {
             "type": "cpu",
-            "class_name": "CpuCollector"
+            "class_name": "CpuCollector",
+            "params": {
+                "enabled": true,
+                "mute": {}
+            }
         },
         {
             "type": "memory",
-            "class_name": "MemoryCollector"
+            "class_name": "MemoryCollector",
+            "params": {
+                "enabled": true,
+                "mute": {}
+            }
         },
         {
             "type": "disk",
-            "class_name": "DiskCollector"
+            "class_name": "DiskCollector",
+            "params": {
+                "enabled": true,
+                "mute": {}
+            }
         }
     ],
     "publishers": [

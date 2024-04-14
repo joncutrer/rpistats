@@ -1,3 +1,4 @@
+from . import Publisher
 import pika
 import json
 
@@ -8,7 +9,7 @@ class AmqpPublisher:
         self.channel.queue_declare(queue=queue)
         self.queue = queue
 
-    def publish(self, data):
+    async def publish(self, data):
         self.channel.basic_publish(exchange='',
                                    routing_key=self.queue,
                                    body=json.dumps(data))

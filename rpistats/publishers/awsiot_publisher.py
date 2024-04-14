@@ -1,3 +1,5 @@
+from . import Publisher
+
 from AWSIoTPythonSDK.MQTTLib import AWSIoTMQTTClient
 import json
 
@@ -7,7 +9,7 @@ class AwsIotPublisher:
         self.myAWSIoTMQTTClient.configureEndpoint(endpoint, 8883)
         self.myAWSIoTMQTTClient.configureCredentials(path_to_root_ca, path_to_private_key, path_to_certificate)
 
-    def publish(self, data):
+    async def publish(self, data):
         topic = "sdk/test/Python"
         self.myAWSIoTMQTTClient.connect()
         self.myAWSIoTMQTTClient.publish(topic, json.dumps(data), 1)
