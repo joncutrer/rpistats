@@ -1,5 +1,5 @@
 import psutil
-from . import Collector  # Assuming there's a base Collector class you're extending
+from . import Collector
 
 class NetworkCollector(Collector):
     async def collect(self):

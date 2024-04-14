@@ -36,6 +36,14 @@
                 "enabled": true,
                 "mute": {}
             }
+        },
+        {
+            "type": "network",
+            "class_name": "NetworkCollector",
+            "params": {
+                "enabled": true,
+                "mute": {}
+            }
         }
     ],
     "publishers": [
