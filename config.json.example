@@ -1,0 +1,99 @@
+{
+    "hostname": "overide_hostname",
+    "extended": {
+        "foo": "bar"
+    },
+    "collectors": [
+        {
+            "type": "cpu",
+            "class_name": "CpuCollector"
+        },
+        {
+            "type": "memory",
+            "class_name": "MemoryCollector"
+        },
+        {
+            "type": "disk",
+            "class_name": "DiskCollector"
+        }
+    ],
+    "publishers": [
+        {
+            "type": "http",
+            "class_name": "HttpPublisher",
+            "params": {
+                "url": "http://example.com/data"
+            }
+        },
+        {
+            "type": "mqtt",
+            "class_name": "MqttPublisher",
+            "params": {
+                "broker": "localhost",
+                "port": 1883,
+                "topic": "system_metrics"
+            }
+        },
+        {
+            "type": "websocket",
+            "class_name": "WebSocketPublisher",
+            "params": {
+                "uri": "ws://example.com/socket"
+            }
+        },
+        {
+            "type": "kafka",
+            "class_name": "KafkaPublisher",
+            "params": {
+                "topic": "system_stats",
+                "server": "localhost:9092"
+            }
+        },
+        {
+            "type": "coap",
+            "class_name": "CoapPublisher",
+            "params": {
+                "host": "localhost",
+                "port": 5683
+            }
+        },
+        {
+            "type": "amqp",
+            "class_name": "AmqpPublisher",
+            "params": {
+                "host": "localhost",
+                "queue": "queue_name"
+            }
+        },
+        {
+            "type": "sftp",
+            "class_name": "SftpPublisher",
+            "params": {
+                "hostname": "localhost",
+                "port": 22,
+                "username": "foo",
+                "password": "password123",
+                "remote_path": "/foo/path/to/file"
+            }
+        },
+        {
+            "type": "grpc",
+            "class_name": "GrpcPublisher",
+            "params": {
+                "host": "localhost",
+                "port": 50051
+            }
+        },
+        {
+            "type": "awe_iot",
+            "class_name": "AwsIotPublisher",
+            "params": {
+                "endpoint": "endpoint.iot.us-east-1.amazonaws.com",
+                "client_id": "client_id",
+                "path_to_certificate": "certificate.pem",
+                "path_to_private_key": "private_key.pem",
+                "path_to_root_ca": "root_ca.pem"
+            }
+        }
+    ]
+}
